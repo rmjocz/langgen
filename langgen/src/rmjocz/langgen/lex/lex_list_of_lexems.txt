@@ -1,0 +1,23 @@
+
+TYPE_N_UNDEF      - parsing error
+
+TYPE_T_NL         - new line
+
+TYPE_T_ASC        - ASCII character ex: '0'
+TYPE_T_SCP        - minus '-' character, means scope of characters
+
+TYPE_T_ESC_ASC_C  - escape sequence ex: '\20' for character described by hex code
+TYPE_T_ESC_BSL    - escape sequence '\\' for backslash '\' character
+TYPE_T_ESC_MIN    - escape sequence '\-' for minus '-' character
+TYPE_T_ESC_DQ     - escape sequence '\"' for double quote character '"'
+TYPE_T_ESC_CR     - escape sequence '\r' for ASCII CR character
+TYPE_T_ESC_LF     - escape sequence '\n' for ASCII LF character
+  
+TYPE_T_OPT_DF_NA  - default & no advance option character '@'
+TYPE_T_OPT_EOL    - end of line option character '~'
+TYPE_T_OPT_BF_RS  - buffer reset option character '-'
+TYPE_T_OPT_EN_ST  - end node option character '.' (adding EOFEC case in order to get last lexeme properly usually is used in node 0 only)
+
+TYPE_T_ST_NR      - node number string ex: '12'
+TYPE_T_LX_ID      - lexeme id string ex: 'TYPE_T_ESC_ASC_C'
+

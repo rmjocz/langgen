@@ -1,0 +1,14 @@
+
+Here is lexer generator it is very simple tool 
+giving you full control of automata behaviour.
+Source code is easy to understand and generated sources also are easily readable.
+Lexer generator outputs code to console producing 3 classes
+to run the lexer you don't need any additional third party libraries, 
+or to write anything by hand.
+However parser and its data structures you have to write by your own 
+depending on your particular needs, here is a little examples in fragments of code
+showing how to do it, but is is not comperhensive guide by any means.
+                                                                                                                                
+By using similar technique you can generate parser finite automatas as well.
+If you need filtering the of lexemes codes in your parser you need to change final ints in Lexeme class to 2^n style (1 2 4 etc)  manually,
+(then you can use & oprator to filter input).

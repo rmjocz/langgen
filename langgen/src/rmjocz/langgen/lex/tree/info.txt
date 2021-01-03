@@ -1,0 +1,3 @@
+
+here are data structures to describe abstract finite automata 
+to be able to generate lexer from it
