@@ -1,0 +1,91 @@
+
+/*
+  this package is for generated lexer in order to test it
+  here is example usage for lookahed(1) grammar (when 1 symbol is buffered)
+  this way you can do wrapper to obtain it as below:
+*/
+
+
+public class SyntaxAnalyser {
+  LexemeAnalyser la;
+  boolean eof;
+  Lexeme lex = null;
+
+  public SyntaxAnalyser(LexemeAnalyser la) {
+    this.la = la;
+    eof = false;
+  }
+  
+  private Lexeme getLexeme() throws LexemeException {
+    Lexeme tmp;
+    tmp = lex;
+    lex = la.getLexeme();
+    if (tmp==null) {
+      tmp = lex;
+      lex = la.getLexeme();
+    }    
+    if (tmp!=null) {
+      return tmp;
+    } else {
+      eof = true;
+      return new Lexeme(Lexeme.TYPE_N_EOF);
+    }
+  }
+
+  private Lexeme peekLexeme() throws LexemeException {
+    if (lex == null) {
+      lex = la.getLexeme();
+    }
+    return lex;
+  }
+
+
+  
+/* main implementation shown below you can call both above methods up to your needs
+   Lexeme.TYPE_N_EOF is to ease production of last lexeme, often it is useful for grammar to have such link
+   there is also eof variable doing the same thing good way to stop the loop
+   but loop can be also infinite while(true) 
+   terminated only by returns and exceptions depending on needs
+
+    public Struct1 getStruct1() throws LexemeException, SyntaxException {
+      int s = 0;
+      while (!eof) {
+
+      ...
+
+      switch (s) {
+
+      ...
+
+        case 1:
+        switch (peekLexeme().getType()) {
+          case Lexeme.TYPE_T_VAR:
+          ...
+
+          getLexeme();
+          s = 4;
+          break;
+
+          ....
+
+          case Lexeme.TYPE_N_EOF:
+          break;
+
+          default:
+          throw new SyntaxException(lex, new int[]{
+            Lexeme.TYPE_T_PLUS,
+            Lexeme.TYPE_T_MINUS,
+            Lexeme.TYPE_T_VAR,
+            Lexeme.TYPE_T_NL,
+            Lexeme.TYPE_N_EOF });
+        }
+        break;
+     
+        ...
+
+*/
+
+
+}
+
+

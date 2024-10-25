@@ -1,0 +1,3 @@
+
+here is lexer and parser os smiple grammar to describe finite automata of the lexer 
+by using similar technique you can generate parser automatas as well 

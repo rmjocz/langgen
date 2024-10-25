@@ -1,0 +1,13 @@
+
+here are data structures to describe abstract finite automata 
+to be able to generate lexer from it
+
+jest asc-val
+jest asc-scp-val
+
+
+asc-set-val nie musi byc bo link zawiera cala tablice asc-val lub asc-scp val ktore moge byc wpisane obok siebie wiec nie ma potrzeby aby to bylo
+
+
+
+
